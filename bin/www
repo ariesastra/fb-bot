@@ -2,5 +2,5 @@ const app = require('../app')
 const port = process.env.PORT || 3001
 
 app.listen(port, _ => {
-    console.log(`server running on ${port}`);
+    console.log(`webhook is listening on ${port}`);
 })

@@ -4,8 +4,12 @@
   "description": "this programm is using NodeJS, Postgresql, sequelize ORM, and some dependencies such as moment.",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon bin/www"
+    "db:dev": "npx sequelize-cli db:migrate:undo:all && npx sequelize-cli db:migrate && npx sequelize-cli db:seed:all",
+    "db:test": "NODE_ENV=test npx sequelize-cli db:migrate:undo:all && NODE_ENV=test npx sequelize-cli db:migrate",
+    "db:create": "NODE_ENV=test npx sequelize-cli db:create",
+    "start": "node bin/www",
+    "dev": "nodemon bin/www",
+    "test": "jest --watchAll --detectOpenHandles --forceExit --runInBand --verbose --coverage"
   },
   "keywords": [],
   "author": "",
@@ -19,7 +23,9 @@
     "sequelize": "^6.15.0"
   },
   "devDependencies": {
+    "jest": "^27.4.7",
     "nodemon": "^2.0.15",
-    "sequelize-cli": "^6.4.1"
+    "sequelize-cli": "^6.4.1",
+    "supertest": "^6.2.2"
   }
 }
