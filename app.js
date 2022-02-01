@@ -1,6 +1,6 @@
 'use strict';
 
-// if (process.env.NODE_ENV !== 'production') // deploy purpose
+if (process.env.NODE_ENV !== 'production') // deploy purpose
     require('dotenv').config()
 const express = require('express')
 const cors = require('cors')
