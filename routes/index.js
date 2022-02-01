@@ -15,14 +15,13 @@ const VERIFY_TOKEN = process.env.VERIFY_TOKEN;
 // WEBHOOK ENDPOINT
 routes.post('/webhook', (req, res, next) => {
   let body = req.body;
-  console.log(body);
   // Checks this is an event from a page subscription
   if (body.object === 'page') {
 
     body.entry.forEach(function(entry) {
       // Gets the body of the webhook event
       let webhook_event = entry.messaging[0];
-      console.log(webhook_event);
+      console.log(webhook_event, '<<<<<<<<<<');
       // Get the sender PSID
       let sender_psid = webhook_event.sender.id;
       console.log('Sender PSID: ' + sender_psid);

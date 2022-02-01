@@ -84,3 +84,7 @@ describe('WEBHOOKS', () => {
     })
   });
 })
+
+describe('MESSAGE ENDPOINT', () => {
+  
+})
