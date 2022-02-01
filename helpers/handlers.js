@@ -1,3 +1,4 @@
+const request = require('request');
 
 // Handles messages events
 function handleMessage(sender_psid, received_message) {
