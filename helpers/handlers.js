@@ -17,19 +17,20 @@ function handleMessage(sender_psid, received_message) {
       response = {
         "text": 'Hi there, whats your first name ?'
       }
+    } else {
+      const checkDate = received_message.text.split('-')
+      // After greetings
+      if (checkDate.length === 2) {
+        response = {
+          text: "please input your birth date using format YYYY-MM-DD ( Y: Year, M: Month, D: Date )"
+        }
+      } else {
+        response = {
+          text: "we will show rest date to your birth date"
+        }
+      }
     }
 
-    // After greetings
-    const checkDate = received_message.text.split('-')
-    if (checkDate.length === 2) {
-      response = {
-        text: "please input your birth date using format YYYY-MM-DD ( Y: Year, M: Month, D: Date )"
-      }
-    } else {
-      response = {
-        text: "we will show rest date to your birth date"
-      }
-    }
   } else if (received_message.attachments) {
     // Gets the URL of the message attachment
     let attachment_url = received_message.attachments[0].payload.url;
