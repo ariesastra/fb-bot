@@ -35,10 +35,10 @@ function handleMessage(sender_psid, received_message) {
         // Calculate how many day untill his birth date
         const nTimes = birthDate.getTime() - currDate.getTime()
         const nDays = nTimes / (1000 * 3600 * 24)
-        console.log(nTimes, nDays);
+        console.log(nTimes, Math.ceil(nDays));
 
         response = {
-          text: "There are <N> days left until your next birthday"
+          text: `There are ${Math.ceil(nDays)} days left until your next birthday`
         }
       }
     }
