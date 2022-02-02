@@ -22,10 +22,19 @@ function handleMessage(sender_psid, received_message) {
       // After greetings
       if (checkDate.length < 2) {
         response = {
-          text: "please input your birth date using format YYYY-MM-DD ( Y: Year, M: Month, D: Date )"
+          text: "do you want to know how many days until your next birth day ? input your birt date using format YYYY-MM-DD ( Y: Year, M: Month, D: Date )"
         }
       } else {
         console.log(checkDate);
+        // Check current date
+        const currDate = new Date()
+        
+        // Check his brith date
+        const birthDate = new Date(received_message.text)
+        
+        console.log(currDate, birthDate);
+        // Calculate how many day untill his birth date
+
         response = {
           text: "we will show rest date to your birth date"
         }
