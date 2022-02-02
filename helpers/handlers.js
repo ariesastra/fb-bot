@@ -27,11 +27,11 @@ function handleMessage(sender_psid, received_message) {
           received_message.text === 'yup'
         ) {
           response = {
-            text: "do you want to know how many days until your next birth day ?"
+            text: "please input your birth date with format YYYY-MM-DD"
           }
         } else if (received_message.text !== 'no' || received_message.text !== 'nah') {
           response = {
-            text: "please input your birth date with format YYYY-MM-DD"
+            text: "do you want to know how many days until your next birth day ?"
           }
         } else {
           response = {
