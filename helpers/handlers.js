@@ -17,14 +17,10 @@ function handleMessage(sender_psid, received_message) {
       response = {
         "text": 'Hi there, whats your first name ?'
       }
-    } else { 
-      response = {
-        "text": 'Please say Hi'
-      }
     }
 
     // After greetings
-    const checkDate = received_message.text
+    const checkDate = received_message.text.trim('-')
     console.log(checkDate);
   } else if (received_message.attachments) {
     // Gets the URL of the message attachment
