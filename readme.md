@@ -1,5 +1,5 @@
 # Facebook NodeJS BOT
-this programm is using NodeJS, Postgresql, sequelize ORM, testing using JEST and Supertest, and also some dependencies such as moment.
+this programm is using NodeJS, testing using JEST and Supertest, and also dependencies that required such as request.
 
 ## Setup
 to setting up this project, you just run npm install / npm i, and wait untill all programm installed.
@@ -14,10 +14,10 @@ GET /webhook
 
 POST /webhook
 
-GET /message
+But Facebook Messenger just accept Https (secure) protocols to running thier chat bot feature, so here I upload my code to Heroku, and this is a url :
+https://adakerja-fb-chatbot.herokuapp.com/
 
-GET /message/id
+## Result
+This is result of my chatbot using NodeJS, Express and Facebook API.
 
-GET /summary
-
-## Conclution
+![Chatbot NodeJs](chatbot.gif)

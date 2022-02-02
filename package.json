@@ -1,7 +1,7 @@
 {
   "name": "fb-bot",
   "version": "1.0.0",
-  "description": "this programm is using NodeJS, Postgresql, sequelize ORM, and some dependencies such as moment.",
+  "description": "NodeJS Chat Bot with Facebook API.",
   "main": "app.js",
   "scripts": {
     "db:dev": "npx sequelize-cli db:migrate:undo:all && npx sequelize-cli db:migrate && npx sequelize-cli db:seed:all",
