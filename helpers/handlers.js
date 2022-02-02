@@ -21,7 +21,15 @@ function handleMessage(sender_psid, received_message) {
 
     // After greetings
     const checkDate = received_message.text.split('-')
-    console.log(checkDate);
+    if (checkDate.length === 2) {
+      response = {
+        text: "please input your birth date using format YYYY-MM-DD ( Y: Year, M: Month, D: Date )"
+      }
+    } else {
+      response = {
+        text: "we will show rest date to your birth date"
+      }
+    }
   } else if (received_message.attachments) {
     // Gets the URL of the message attachment
     let attachment_url = received_message.attachments[0].payload.url;
