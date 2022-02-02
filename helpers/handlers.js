@@ -15,8 +15,10 @@ function handleMessage(sender_psid, received_message) {
     const greeting = firstTrait(received_message.nlp, 'wit$greetings');
     if (greeting && greeting.confidence > 0.8) {
       response = {
-        "text": 'Hi there!'
+        "text": 'Hi there, whats your first name ?'
       }
+    } else if (received_message.text) {
+      console.log(received_message);   
     } else { 
       response = {
         "text": 'Please say Hi'

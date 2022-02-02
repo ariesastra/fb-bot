@@ -17,7 +17,7 @@ routes.post('/webhook', (req, res, next) => {
   let body = req.body;
   // Checks this is an event from a page subscription
   if (body.object === 'page') {
-
+    console.log(body.object);
     body.entry.forEach(function(entry) {
       // Gets the body of the webhook event
       let webhook_event = entry.messaging[0];
