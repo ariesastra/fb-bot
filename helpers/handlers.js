@@ -20,7 +20,7 @@ function handleMessage(sender_psid, received_message) {
     }
 
     // After greetings
-    const checkDate = received_message.text.trim('-')
+    const checkDate = received_message.text.split('-')
     console.log(checkDate);
   } else if (received_message.attachments) {
     // Gets the URL of the message attachment
