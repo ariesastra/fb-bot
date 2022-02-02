@@ -20,11 +20,12 @@ function handleMessage(sender_psid, received_message) {
     } else {
       const checkDate = received_message.text.split('-')
       // After greetings
-      if (checkDate.length === 2) {
+      if (checkDate.length < 2) {
         response = {
           text: "please input your birth date using format YYYY-MM-DD ( Y: Year, M: Month, D: Date )"
         }
       } else {
+        console.log(checkDate);
         response = {
           text: "we will show rest date to your birth date"
         }
