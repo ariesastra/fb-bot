@@ -12,7 +12,7 @@ function handleMessage(sender_psid, received_message) {
   // Checks if the message contains text
   if (received_message.text) {
     // Handle greetings
-    const greeting = firstTrait(message.nlp, 'wit$greetings');
+    const greeting = firstTrait(received_message.nlp, 'wit$greetings');
     if (greeting && greeting.confidence > 0.8) {
       sendResponse('Hi there!');
     } else { 
