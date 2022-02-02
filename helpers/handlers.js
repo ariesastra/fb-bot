@@ -31,10 +31,10 @@ function handleMessage(sender_psid, received_message) {
         
         // Check his brith date
         const birthDate = new Date(`${currDate.getFullYear()}/${checkDate[1]}/${checkDate[2]}`)
-        
+        console.log(currDate, birthDate);
         // Calculate how many day untill his birth date
         const nTimes = birthDate.getTime() - currDate.getTime()
-        const nDays = nTimes / (1000 * 360 * 24)
+        const nDays = nTimes / (1000 * 3600 * 24)
         console.log(nTimes, nDays);
 
         response = {
