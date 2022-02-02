@@ -30,13 +30,15 @@ function handleMessage(sender_psid, received_message) {
         const currDate = new Date()
         
         // Check his brith date
-        const birthDate = new Date(received_message.text)
+        const birthDate = new Date(`${currDate.getFullYear()}/${checkDate[1]}/${checkDate[2]}`)
         
-        console.log(currDate, birthDate);
         // Calculate how many day untill his birth date
+        const nTimes = birthDate.getTime() - currDate.getTime()
+        const nDays = nTimes / (1000 * 360 * 24)
+        console.log(nTimes, nDays);
 
         response = {
-          text: "we will show rest date to your birth date"
+          text: "There are <N> days left until your next birthday"
         }
       }
     }
