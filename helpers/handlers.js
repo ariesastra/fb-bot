@@ -21,35 +21,40 @@ function handleMessage(sender_psid, received_message) {
       const checkDate = received_message.text.split('-')
       // After greetings
       if (checkDate.length < 2) {
-        response = {
-          text: "do you want to know how many days until your next birth day ?"
-        }
-      } else {
-        console.log(checkDate);
         if (
           received_message.text === 'yes' ||
           received_message.text === 'yeah' ||
           received_message.text === 'yup'
         ) {
-          // Check current date
-          const currDate = new Date()
-          
-          // Check his brith date
-          const birthDate = new Date(`${currDate.getFullYear()}/${checkDate[1]}/${checkDate[2]}`)
-          console.log(currDate, birthDate);
-          // Calculate how many day untill his birth date
-          const nTimes = birthDate.getTime() - currDate.getTime()
-          const nDays = nTimes / (1000 * 3600 * 24)
-          console.log(nTimes, Math.ceil(nDays));
-  
           response = {
-            text: `There are ${Math.ceil(nDays)} days left until your next birthday`
+            text: "do you want to know how many days until your next birth day ?"
+          }
+        } else if (received_message.text !== 'no' || received_message.text !== 'nah') {
+          response = {
+            text: "do you want to know how many days until your next birth day ?"
           }
         } else {
           response = {
             text: "Goodbye"
           }
-        } 
+        }
+      } else {
+        console.log(checkDate);
+        
+        // Check current date
+        const currDate = new Date()
+        
+        // Check his brith date
+        const birthDate = new Date(`${currDate.getFullYear()}/${checkDate[1]}/${checkDate[2]}`)
+        console.log(currDate, birthDate);
+        // Calculate how many day untill his birth date
+        const nTimes = birthDate.getTime() - currDate.getTime()
+        const nDays = nTimes / (1000 * 3600 * 24)
+        console.log(nTimes, Math.ceil(nDays));
+
+        response = {
+          text: `There are ${Math.ceil(nDays)} days left until your next birthday`
+        }
       }  
     }
 
