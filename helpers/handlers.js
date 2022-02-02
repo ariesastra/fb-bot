@@ -1,22 +1,21 @@
 const request = require('request')
 
+// Handle NLP
+function firstTrait(nlp, name) {
+  return nlp && nlp.entities && nlp.traits[name] && nlp.traits[name][0];
+}
+
 // Handles messages events
 function handleMessage(sender_psid, received_message) {
   let response
 
   // Checks if the message contains text
   if (received_message.text) {
-    // Creates the payload for a basic text message, which
-    // will be added to the body of our request to the Send API
-    if (
-      received_message.text === 'hi' || 
-      received_message.text === 'Hi' ||
-      received_message.text === 'HI'
-    ) {
-      response = {
-        "text": `Hi, Please type your first name :`
-      }
-    } else {
+    // Handle greetings
+    const greeting = firstTrait(message.nlp, 'wit$greetings');
+    if (greeting && greeting.confidence > 0.8) {
+      sendResponse('Hi there!');
+    } else { 
       response = {
         "text": 'Please say Hi'
       }
